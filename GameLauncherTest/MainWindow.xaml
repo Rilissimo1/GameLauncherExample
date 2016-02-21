@@ -1,0 +1,54 @@
+﻿<Window x:Class="GameLauncherTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameLauncherTest"
+        mc:Ignorable="d"
+        MouseLeftButtonDown="WindowMouseLeftButtonDown"
+        Title="LOC_Launcher" Height="450" Width="710" Foreground="#FF3B4F61" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="bin/Debug/Background.jpg"/>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="mainLabel" Content="Leap Of Champions Launcher" FontSize="26.667" Height="43" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Left" Width="388" Grid.Column="1" FontWeight="Bold" Background="#B2000000"/>
+        <Button x:Name="launchButton" Content="Play" HorizontalAlignment="Right" Margin="0,0,35,72" VerticalAlignment="Bottom" Width="120" Height="35" ToolTip="Launch the game!" Click="launchButton_Click" BorderBrush="{x:Null}" BorderThickness="0" Foreground="White" FontWeight="Bold" Grid.Column="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FF236E91" Offset="0.974"/>
+                    <GradientStop Color="#FF4ED6D6"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="websiteButton" Content="Visit Website" Margin="0,0,35,132" VerticalAlignment="Bottom" Height="35" ToolTip="Visit Website" Click="websiteButton_Click" BorderBrush="{x:Null}" BorderThickness="0" Foreground="White" FontWeight="Bold" HorizontalAlignment="Right" Width="120" Grid.Column="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FF2E3841"/>
+                    <GradientStop Color="#FF2E3841"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <WebBrowser Margin="25,59,0,72" Source="https://308f0365df6f2f4f57ea063651346709e7ed4cdc-www.googledrive.com/host/0B7olgEMo6Y6jQzgzZTlvVm1tSDQ" Grid.Column="1" HorizontalAlignment="Left" Width="493" Opacity="0.7"/>
+        <Label x:Name="mainLabel_Copy" Content="v1.2.07&#xD;&#xA;" FontSize="10.667" Height="23" VerticalAlignment="Top" Margin="388,17,0,0" Foreground="White" HorizontalAlignment="Left" Width="120" Grid.Column="1"/>
+        <Label x:Name="update" HorizontalContentAlignment="Right" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="22,387,0,0" VerticalAlignment="Top" Height="35" Width="363" Background="#B2000000" Foreground="White" FontSize="16" FontFamily="Segoe UI Light" TextOptions.TextHintingMode="Animated"/>
+        <Button x:Name="button" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="672,10,0,0" VerticalAlignment="Top" Width="20" Height="20" Click = "CloseWindow" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="bin/Debug/xButton.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button_Copy" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Margin="647,10,0,0" VerticalAlignment="Top" Width="20" Height="20" Click = "Minimize" BorderThickness="0">
+            <Button.Background>
+                <ImageBrush ImageSource="pack://siteoforigin:,,,/bin/Debug/MinimizeButton.png"/>
+            </Button.Background>
+        </Button>
+        <Image x:Name="image" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="100" Margin="558,90,0,0" VerticalAlignment="Top" Width="100" OpacityMask="White" Source="bin/Debug/Logo Leaf.png"/>
+
+    </Grid>
+</Window>
