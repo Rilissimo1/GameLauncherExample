@@ -25,17 +25,18 @@ namespace GameLauncherTest
             else{
                 update.Content = "New version avaiable! Download it from Steam!";
             }
-            CreateDesktopShortcut("Leap Of Champions", Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Assembly.GetExecutingAssembly().Location);
-            CreateMenuShortcut();
+            if(!System.IO.File.Exists(Directory.GetCurrentDirectory() + "/default.txt")) {
+                CreateDesktopShortcut("Leap Of Champions", Environment.GetFolderPath(Environment.SpecialFolder.Desktop), Assembly.GetExecutingAssembly().Location);
+                CreateMenuShortcut();
+                CreateDefaultFile();
+            }
         }
 
-        private void websiteButton_Click(object sender, RoutedEventArgs e)
-        {
+        private void websiteButton_Click(object sender, RoutedEventArgs e) {
             Launcher.LaunchWebsite("http://www.leafgs.com/");
         }
 
-        private void launchButton_Click(object sender, RoutedEventArgs e)
-        {
+        private void launchButton_Click(object sender, RoutedEventArgs e) {
             if (Launcher.CheckUpdate()){
                 update.Content = "Game is up to date! Launching...";
                 Launcher.PlayGame();
@@ -81,6 +82,12 @@ namespace GameLauncherTest
             MyShortcut.WorkingDirectory = Directory.GetCurrentDirectory();
             MyShortcut.Description = "Launch Leap Of Champions!";
             MyShortcut.Save();
+        }
+
+        private static void CreateDefaultFile() {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string text = "14859632";
+            System.IO.File.WriteAllText(currentDirectory + "/default.txt", text);
         }
     }
 }
